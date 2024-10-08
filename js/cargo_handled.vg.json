@@ -18,7 +18,7 @@
     },
     "title": "Cargo Handled in Malaysia (2000-2019)",
     "data": {
-      "url": "data/cleaned_cargo_handled.csv"
+      "url": "https://raw.githubusercontent.com/NaveedMonash/Data-Visualisation-2/refs/heads/main/data/cleaned_cargo_handled.csv"
     },
     "width": 600,
     "height": 400,
