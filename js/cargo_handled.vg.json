@@ -1,0 +1,58 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "config": {
+      "title": {"fontSize": 20, "font": "Arial", "fontWeight": "bold"},
+      "axis": {
+        "labelFontSize": 12,
+        "titleFontSize": 14,
+        "titleFont": "Arial",
+        "labelFont": "Arial"
+      },
+      "legend": {
+        "titleFontSize": 14,
+        "labelFontSize": 12,
+        "titleFont": "Arial",
+        "labelFont": "Arial"
+      },
+      "view": {"stroke": "transparent"}
+    },
+    "title": "Cargo Handled in Malaysia (2000-2019)",
+    "data": {
+      "url": "data/cleaned_cargo_handled.csv"
+    },
+    "width": 600,
+    "height": 400,
+    "mark": "rect",
+    "encoding": {
+      "x": {"field": "Year", "type": "ordinal", "title": "Year"},
+      "y": {"field": "Category", "type": "nominal", "title": "Cargo Type"},
+      "color": {
+        "field": "Tonnage",
+        "type": "quantitative",
+        "title": "Cargo Handled (Tonnes)",
+        "scale": {"scheme": "blues"}
+      },
+      "tooltip": [
+        {"field": "Category", "type": "nominal", "title": "Cargo Type"},
+        {"field": "Year", "type": "ordinal", "title": "Year"},
+        {"field": "Tonnage", "type": "quantitative", "title": "Tonnes", "format": ","}
+      ]
+    },
+    "params": [
+      {
+        "name": "CargoType",
+        "bind": {
+          "input": "select",
+          "options": ["All", "Domestic", "International"],
+          "name": "Select Cargo Type: "
+        },
+        "value": "All"
+      }
+    ],
+    "transform": [
+      {
+        "filter": "CargoType === 'All' || datum.Category === CargoType"
+      }
+    ]
+  }
+  

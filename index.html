@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Air Traffic in Malaysia</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Air Traffic in Malaysia</h1>
+    </header>
+
+    <!-- Map of Airports in Malaysia -->
+    <section class="visualization">
+      <div id="map_visualisation"></div>
+      <p class="narrative">
+        This map visualizes the distribution of airports across Malaysia, categorized into small, medium, and large airports. The concentration of airports in certain regions highlights key transportation hubs and the infrastructure supporting both domestic and international flights.
+      </p>
+    </section>
+
+    <!-- Air Traffic Passengers Bubble Plot -->
+    <section class="visualization">
+      <div id="bubble_visualisation"></div>
+      <div class="filter-controls" id="bubble_filter_controls"></div>
+      <p class="narrative">
+        The bubble plot displays the number of air traffic passengers over two decades, differentiating between domestic and international flights. The peak in 2019, with 27.77 million passengers, indicates a high demand for air travel in Malaysia before the downturn in 2020.
+      </p>
+    </section>
+
+    <!-- Landings and Take-Offs -->
+    <section class="visualization">
+      <div id="landings_takeoffs"></div>
+      <div class="filter-controls" id="landings_filter_controls"></div>
+      <p class="narrative">
+        This line chart illustrates the annual number of landings and take-offs for domestic and international flights. Peaks in 2015 for international flights and 2018 for domestic flights reflect significant growth periods for Malaysia's aviation sector.
+      </p>
+    </section>
+
+    <!-- Cargo Handled -->
+    <section class="visualization">
+      <div id="cargo_handled"></div>
+      <div class="filter-controls" id="cargo_filter_controls"></div>
+      <p class="narrative">
+        The heatmap shows the volume of cargo handled annually in Malaysia, distinguishing between domestic and international shipments. The steady increase over the years reflects the expanding role of air freight in the country’s logistics and trade sectors.
+      </p>
+    </section>
+  </div>
+
+<!-- References Section -->
+<section class="references">
+    <h2>References</h2>
+    
+    <div class="reference-item">
+      <h3>Airports Dataset</h3>
+      <p><strong>Source:</strong> <a href="https://data.world/ourairports/8278caf4-966a-450e-bc1b-c68169c01ec7" target="_blank">https://data.world/ourairports/8278caf4-966a-450e-bc1b-c68169c01ec7</a></p>
+      <p><strong>Attributes:</strong></p>
+      <ul>
+        <li><strong>Airport Type (Categorical):</strong> Classifies airports as Large, Medium, Small, Closed, or Heliport.</li>
+        <li><strong>Location (Quantitative):</strong> Latitude and longitude coordinates of each airport in Malaysia.</li>
+      </ul>
+      <p><strong>Author:</strong> Contributed by various aviation enthusiasts and aggregated on OurAirports.</p>
+    </div>
+  
+    <div class="reference-item">
+      <h3>Passenger Traffic Dataset</h3>
+      <p><strong>Source:</strong> <a href="https://opendosm.netlify.app/" target="_blank">https://opendosm.netlify.app/</a></p>
+      <p><strong>Attributes:</strong></p>
+      <ul>
+        <li><strong>Year (Temporal):</strong> Years ranging from 2000 to 2020.</li>
+        <li><strong>Flight Category (Categorical):</strong> Classifies flights as either Domestic or International.</li>
+        <li><strong>Passenger Count (Quantitative):</strong> Number of passengers on Domestic and International flights.</li>
+      </ul>
+      <p><strong>Author:</strong> Data compiled and published by the Department of Statistics Malaysia (DOSM).</p>
+    </div>
+  
+    <div class="reference-item">
+      <h3>Cargo Handled Dataset</h3>
+      <p><strong>Source:</strong> <a href="https://archive.data.gov.my/data/en_US/dataset/air-traffic-statistics-cargo-handled-tonnes-malaysia" target="_blank">https://archive.data.gov.my/data/en_US/dataset/air-traffic-statistics-cargo-handled-tonnes-malaysia</a></p>
+      <p><strong>Attributes:</strong></p>
+      <ul>
+        <li><strong>Year (Temporal):</strong> Years ranging from 2000 to 2019.</li>
+        <li><strong>Cargo Type (Categorical):</strong> Classifies cargo as either Domestic or International.</li>
+        <li><strong>Tonnage (Quantitative):</strong> Amount of cargo handled in tonnes.</li>
+      </ul>
+      <p><strong>Author:</strong> Provided by the Malaysian government’s data portal.</p>
+    </div>
+  
+    <div class="reference-item">
+      <h3>Landings and Take-Offs Dataset</h3>
+      <p><strong>Source:</strong> <a href="https://archive.data.gov.my/data/en_US/dataset/air-traffic-statistics-number-of-landings-and-take-offs-malaysia" target="_blank">https://archive.data.gov.my/data/en_US/dataset/air-traffic-statistics-number-of-landings-and-take-offs-malaysia</a></p>
+      <p><strong>Attributes:</strong></p>
+      <ul>
+        <li><strong>Year (Temporal):</strong> Years ranging from 2000 to 2020.</li>
+        <li><strong>Flight Category (Categorical):</strong> Classifies flights as either Domestic or International.</li>
+        <li><strong>Number of Landings/Take-Offs (Quantitative):</strong> Total number of landings and take-offs recorded.</li>
+      </ul>
+      <p><strong>Author:</strong> Provided by the Malaysian government’s data portal.</p>
+    </div>
+  </section>
+  
+  <!-- JavaScript to embed the visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script>
+    vegaEmbed("#map_visualisation", "js/symbol_map.vg.json").catch(console.error);
+    vegaEmbed("#bubble_visualisation", "js/bubble_plot.vg.json").catch(console.error);
+    vegaEmbed("#landings_takeoffs", "js/landings_takeoffs.vg.json").catch(console.error);
+    vegaEmbed("#cargo_handled", "js/cargo_handled.vg.json").catch(console.error);
+  </script>
+  </body>
+  
+</html>
