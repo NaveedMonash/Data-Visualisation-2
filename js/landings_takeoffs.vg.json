@@ -18,7 +18,7 @@
     },
     "title": "Landings and Take-Offs in Malaysia (2000-2020)",
     "data": {
-      "url": "data/cleaned_landings_takeoffs.csv"
+      "url": "https://raw.githubusercontent.com/NaveedMonash/Data-Visualisation-2/refs/heads/main/data/cleaned_landings_takeoffs.csv"
     },
     "width": 700,
     "height": 400,
