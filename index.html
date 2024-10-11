@@ -42,8 +42,10 @@
       <div id="cargo_handled"></div>
       <div class="filter-controls" id="cargo_filter_controls"></div>
       <p class="narrative">
-        The heatmap shows the volume of cargo handled annually in Malaysia, distinguishing between domestic and international shipments. The steady increase over the years reflects the expanding role of air freight in the country’s logistics and trade sectors.
+        This chart displays the annual cargo volume handled in Malaysia, with negative values representing domestic cargo and positive values representing international cargo. A noticeable trend indicates a substantial rise in international cargo after 2005. The steady increase over the years reflects the expanding role of air freight in the country’s logistics and trade sectors.
       </p>
+      <!-- Add this div for the annotation text -->
+      <div id="cargo_annotation">The cargo handled increased in quantity significantly after 2005.</div>
     </section>
   </div>
 
@@ -54,48 +56,30 @@
     <div class="reference-item">
       <h3>Airports Dataset</h3>
       <p><strong>Source:</strong> <a href="https://data.world/ourairports/8278caf4-966a-450e-bc1b-c68169c01ec7" target="_blank">https://data.world/ourairports/8278caf4-966a-450e-bc1b-c68169c01ec7</a></p>
-      <p><strong>Attributes:</strong></p>
-      <ul>
-        <li><strong>Airport Type (Categorical):</strong> Classifies airports as Large, Medium, Small, Closed, or Heliport.</li>
-        <li><strong>Location (Quantitative):</strong> Latitude and longitude coordinates of each airport in Malaysia.</li>
-      </ul>
       <p><strong>Author:</strong> Contributed by various aviation enthusiasts and aggregated on OurAirports.</p>
+      <p><strong>Date:</strong> October 3, 2017.</p>
     </div>
   
     <div class="reference-item">
       <h3>Passenger Traffic Dataset</h3>
       <p><strong>Source:</strong> <a href="https://opendosm.netlify.app/" target="_blank">https://opendosm.netlify.app/</a></p>
-      <p><strong>Attributes:</strong></p>
-      <ul>
-        <li><strong>Year (Temporal):</strong> Years ranging from 2000 to 2020.</li>
-        <li><strong>Flight Category (Categorical):</strong> Classifies flights as either Domestic or International.</li>
-        <li><strong>Passenger Count (Quantitative):</strong> Number of passengers on Domestic and International flights.</li>
-      </ul>
       <p><strong>Author:</strong> Data compiled and published by the Department of Statistics Malaysia (DOSM).</p>
+      <p><strong>Date:</strong> March 29, 2021.</p>
     </div>
   
     <div class="reference-item">
       <h3>Cargo Handled Dataset</h3>
       <p><strong>Source:</strong> <a href="https://archive.data.gov.my/data/en_US/dataset/air-traffic-statistics-cargo-handled-tonnes-malaysia" target="_blank">https://archive.data.gov.my/data/en_US/dataset/air-traffic-statistics-cargo-handled-tonnes-malaysia</a></p>
-      <p><strong>Attributes:</strong></p>
-      <ul>
-        <li><strong>Year (Temporal):</strong> Years ranging from 2000 to 2019.</li>
-        <li><strong>Cargo Type (Categorical):</strong> Classifies cargo as either Domestic or International.</li>
-        <li><strong>Tonnage (Quantitative):</strong> Amount of cargo handled in tonnes.</li>
-      </ul>
       <p><strong>Author:</strong> Provided by the Malaysian government’s data portal.</p>
+      <p><strong>Date:</strong> March 29, 2021.</p>
     </div>
   
     <div class="reference-item">
       <h3>Landings and Take-Offs Dataset</h3>
       <p><strong>Source:</strong> <a href="https://archive.data.gov.my/data/en_US/dataset/air-traffic-statistics-number-of-landings-and-take-offs-malaysia" target="_blank">https://archive.data.gov.my/data/en_US/dataset/air-traffic-statistics-number-of-landings-and-take-offs-malaysia</a></p>
       <p><strong>Attributes:</strong></p>
-      <ul>
-        <li><strong>Year (Temporal):</strong> Years ranging from 2000 to 2020.</li>
-        <li><strong>Flight Category (Categorical):</strong> Classifies flights as either Domestic or International.</li>
-        <li><strong>Number of Landings/Take-Offs (Quantitative):</strong> Total number of landings and take-offs recorded.</li>
-      </ul>
       <p><strong>Author:</strong> Provided by the Malaysian government’s data portal.</p>
+      <p><strong>Date:</strong> March 29, 2021.</p>
     </div>
   </section>
   
@@ -109,6 +93,5 @@
     vegaEmbed("#landings_takeoffs", "js/landings_takeoffs.vg.json").catch(console.error);
     vegaEmbed("#cargo_handled", "js/cargo_handled.vg.json").catch(console.error);
   </script>
-  </body>
-  
+</body>
 </html>
